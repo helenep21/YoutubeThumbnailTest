@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { width: 320px; padding: 20px; font-family: sans-serif; background: #e0e5ec; color: #4a4a4a; }
+    h3 { text-align: center; margin-top: 0; color: #555; text-shadow: 1px 1px 1px white; }
+    
+    .card {
+      background: #e0e5ec; border-radius: 20px; padding: 20px;
+      box-shadow: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5);
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      width: 100%; padding: 12px; border: none; border-radius: 10px;
+      background: #e0e5ec; box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #fff;
+      margin-bottom: 15px; box-sizing: border-box; outline: none;
+    }
+
+    /* Standard Label-based File Input Trigger */
+    .file-label {
+      display: block; width: 100%; padding: 12px; text-align: center;
+      background: linear-gradient(145deg, #4da6ff, #0073e6);
+      color: white; font-weight: bold; border-radius: 10px;
+      box-shadow: 5px 5px 10px #a3b1c6, -5px -5px 10px #fff;
+      cursor: pointer; box-sizing: border-box;
+    }
+    .file-label:hover { transform: translateY(-2px); }
+    .file-label:active { transform: translateY(1px); background: #0073e6; }
+    
+    /* Hide the ugly default input */
+    #fileInput { display: none; }
+
+    #previewContainer {
+      margin-top: 15px; width: 100%; height: 120px; display: none;
+      background: #333; border-radius: 10px; overflow: hidden;
+    }
+    #previewImg { width: 100%; height: 100%; object-fit: cover; }
+
+    #saveBtn {
+      width: 100%; padding: 15px; border: none; border-radius: 10px;
+      background: linear-gradient(145deg, #ff3333, #cc0000);
+      color: white; font-weight: bold; cursor: pointer; font-size: 14px;
+      box-shadow: 5px 5px 10px #a3b1c6, -5px -5px 10px #fff;
+    }
+    #saveBtn:active { background: #cc0000; transform: translateY(2px); }
+
+    #resetBtn {
+      background: none; border: none; color: #999; font-size: 11px;
+      text-decoration: underline; cursor: pointer; margin-top: 10px; width: 100%;
+    }
+
+    #status { margin-top: 10px; font-size: 12px; text-align: center; }
+  </style>
+</head>
+<body>
+  <h3>Thumbnail Tester</h3>
+  
+  <div class="card">
+    <input type="text" id="titleInput" placeholder="Enter video title...">
+    
+    <!-- This label triggers the hidden file input -->
+    <label for="fileInput" class="file-label" id="fileLabelText">
+      Select Image
+    </label>
+    <input type="file" id="fileInput" accept="image/*">
+
+    <div id="previewContainer">
+      <img id="previewImg">
+    </div>
+  </div>
+
+  <button id="saveBtn">SAVE & APPLY</button>
+  <button id="resetBtn">Reset All Data</button>
+  
+  <div id="status"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

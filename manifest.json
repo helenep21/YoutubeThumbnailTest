@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Thumbnail Tester",
+  "version": "1.0",
+  "permissions": ["contextMenus", "storage", "activeTab", "scripting"],
+  "host_permissions": ["*://www.youtube.com/*"],
+  "action": { "default_popup": "popup.html", "default_icon": "icon.png" },
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [{
+    "matches": ["*://www.youtube.com/*"],
+    "js": ["content.js"],
+    "run_at": "document_idle"
+  }]
+}
