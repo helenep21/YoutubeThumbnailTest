@@ -2,6 +2,8 @@
 
 A lightweight Chrome extension that lets you test your YouTube video titles and thumbnails directly on the YouTube homepage before publishing. Perfect for content creators who want to see how their content stands out in a real feed.
 
+![Example](example.png)
+
 ## Features
 
 - **Visual A/B Testing**: See your thumbnail and title in context with other YouTube videos
